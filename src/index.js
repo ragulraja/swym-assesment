@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Client from 'shopify-buy';
 import reportWebVitals from './reportWebVitals';
+
+const client = Client.buildClient({
+  storefrontAccessToken: '65e8b0331a4799591e9c12b653e02e29',
+  domain: 'dosacamp-2.myshopify.com'
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App client={client} />
   </React.StrictMode>,
   document.getElementById('root')
 );
